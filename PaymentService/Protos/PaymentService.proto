@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "PaymentDemo.Protos";
+
+import "google/protobuf/timestamp.proto";
+
+
+service PaymentProto{
+	rpc ApplyPayment(OrderMassage) returns(Response);
+}
+
+message OrderMassage {
+	int32 Id = 1;
+	double totalMoney = 2;
+	repeated Product product = 3;
+	int32 userId = 4;
+	google.protobuf.Timestamp stamp = 5;
+}
+
+message Product{
+	int32 id = 1;
+	int32 quantity = 2;
+}
+message Response {
+	bool succeed  = 1;
+	string response = 2;
+}

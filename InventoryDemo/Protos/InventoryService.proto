@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "InventoryDemo.Protos";
+
+service InventoryProto{
+	rpc CheckInventory(Products) returns (Response);
+}
+
+message Product{
+	int32 id = 1;
+	string name = 2;
+	int32 quantity = 3;
+}
+message Products{
+	repeated Product productList = 1;
+}
+message Response {
+	bool succeed  = 1;
+	string response = 2;
+}

@@ -1,0 +1,3 @@
+obj\Debug\net6.0\Protos/PaymentService.cs \
+obj\Debug\net6.0\Protos/PaymentServiceGrpc.cs: C:/Users/muna/.nuget/packages/grpc.tools/2.46.1/build/native/include/google/protobuf/timestamp.proto\
+ Protos/PaymentService.proto

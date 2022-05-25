@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\OrderProto.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.46.0" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.46.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\InventoryDemo\Protos\InventoryService.proto" GrpcServices="Client">
+      <Link>Protos\InventoryService.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\PaymentService\Protos\PaymentService.proto" GrpcServices="Client">
+      <Link>Protos\PaymentService.proto</Link>
+    </Protobuf>
+    <Protobuf Include="Protos\OrderProto.proto" />
+  </ItemGroup>
+
+</Project>

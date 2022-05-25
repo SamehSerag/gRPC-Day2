@@ -1,0 +1,6 @@
+<button (click)="send()"> Send</button>
+
+<div *ngIf="!logs||!logs.length">No Logs</div>
+<div *ngFor="let entry of logs">
+  {{entry}}
+</div>
